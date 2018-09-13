@@ -1,0 +1,49 @@
+{
+  "name": "gcf-config",
+  "version": "0.1.0",
+  "description": "Reusable logging module for Google Cloud Functions with traceable ID",
+  "main": "index.js",
+  "scripts": {
+    "build": "./node_modules/.bin/tsc",
+    "lint": "./node_modules/.bin/tslint -c tslint.json 'src/**/*.ts'",
+    "test": "./node_modules/.bin/jest",
+    "coverage": "./node_modules/.bin/jest --coverage"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.2",
+    "jest": "^23.6.0",
+    "tslint": "^5.11.0",
+    "typescript": "^3.0.3"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "<rootDir>/preprocessor.js"
+    },
+    "testMatch": [
+      "**/__tests__/*.+(ts|tsx|js)"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikesparr/gcf-logger.git"
+  },
+  "keywords": [
+    "cloud",
+    "functions",
+    "12factor",
+    "logging",
+    "tracing",
+    "async"
+  ],
+  "author": "Mike Sparr <mike@goomzee.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mikesparr/gcf-logger/issues"
+  },
+  "homepage": "https://github.com/mikesparr/gcf-logger#readme"
+}
