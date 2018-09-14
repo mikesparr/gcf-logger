@@ -1,5 +1,5 @@
 {
-  "name": "gcf-config",
+  "name": "gcf-logger",
   "version": "1.0.0",
   "description": "Reusable logging module for Google Cloud Functions with traceable ID",
   "main": "index.js",
