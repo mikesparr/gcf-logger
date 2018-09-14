@@ -40,7 +40,9 @@ var Logger = (function () {
         if (opts.requestId) {
             this.requestId = opts.requestId;
         }
-        this.name = "" + opts.name;
+        if (opts.name) {
+            this.name = "" + opts.name;
+        }
         this.level = opts.level;
     };
     Logger.prototype.trace = function (message) {
