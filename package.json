@@ -1,6 +1,6 @@
 {
   "name": "gcf-config",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Reusable logging module for Google Cloud Functions with traceable ID",
   "main": "index.js",
   "scripts": {
@@ -45,5 +45,9 @@
   "bugs": {
     "url": "https://github.com/mikesparr/gcf-logger/issues"
   },
-  "homepage": "https://github.com/mikesparr/gcf-logger#readme"
+  "homepage": "https://github.com/mikesparr/gcf-logger#readme",
+  "dependencies": {
+    "@types/node": "^10.9.4",
+    "os": "^0.1.1"
+  }
 }
