@@ -60,8 +60,9 @@ export class Logger implements ILogger {
         if (opts.requestId) {
             this.requestId = opts.requestId;
         }
-
-        this.name = `${opts.name}`;
+        if (opts.name) {
+            this.name = `${opts.name}`;
+        }
         this.level = opts.level;
     }
 
