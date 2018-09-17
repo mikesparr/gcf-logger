@@ -67,11 +67,12 @@ var Logger = (function () {
         if (level < this.level) {
             return;
         }
-        var ts = (new Date()).toISOString();
+        var timestamp = (new Date()).toISOString();
         var info = {
-            ref: (this.requestId) ? "" + this.requestId : null,
-            type: this.levelNames[this.level],
+            ts: timestamp,
             msg: message,
+            type: this.levelNames[this.level],
+            ref: (this.requestId) ? "" + this.requestId : null,
             name: this.name,
             level: this.level,
             host: this.hostname,
