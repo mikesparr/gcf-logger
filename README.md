@@ -44,10 +44,10 @@ in document storage for later analysis.
 
 ```
 {
-    ref: 'http-12345', 
     ts: '2018-01-01T08:32:30.858Z', 
-    type: 'info', 
     msg: 'Something happened', 
+    ref: 'http-12345', 
+    type: 'info', 
     level: 2, 
     host: 'localhost', 
     pid: 12345

@@ -91,11 +91,12 @@ export class Logger implements ILogger {
             return;
         }
 
-        const ts: string = (new Date()).toISOString();
+        const timestamp: string = (new Date()).toISOString();
         const info: {[key: string]: any} = {
-            ref         : (this.requestId) ? `${this.requestId}` : null,
-            type        : this.levelNames[this.level],
+            ts          : timestamp,
             msg         : message,
+            type        : this.levelNames[this.level],
+            ref         : (this.requestId) ? `${this.requestId}` : null,
             name        : this.name,
             level       : this.level,
             host        : this.hostname,
