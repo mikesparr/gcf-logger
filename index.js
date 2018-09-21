@@ -37,8 +37,8 @@ var Logger = (function () {
         else {
             opts.level = opts.level || this.levelInfo.info;
         }
-        if (opts.requestId) {
-            this.requestId = opts.requestId;
+        if (opts.ref) {
+            this.ref = "" + opts.ref;
         }
         if (opts.name) {
             this.name = "" + opts.name;
@@ -72,7 +72,7 @@ var Logger = (function () {
             ts: timestamp,
             msg: message,
             type: this.levelNames[this.level],
-            ref: (this.requestId) ? "" + this.requestId : null,
+            ref: (this.ref) ? this.ref : null,
             name: this.name,
             level: this.level,
             host: this.hostname,

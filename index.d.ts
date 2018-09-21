@@ -14,7 +14,7 @@ export declare class Logger implements ILogger {
     protected level: number;
     protected name: string;
     protected pid: number;
-    protected requestId: string;
+    protected ref: string;
     protected levelInfo: {
         [key: string]: number;
     };

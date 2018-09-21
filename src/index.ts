@@ -19,7 +19,7 @@ export class Logger implements ILogger {
     protected level: number;
     protected name: string;
     protected pid: number;
-    protected requestId: string;
+    protected ref: string;
 
     protected levelInfo: {[key: string]: number} = {
         all         : 0,
@@ -57,8 +57,8 @@ export class Logger implements ILogger {
         } else {
             opts.level = opts.level || this.levelInfo.info;
         }
-        if (opts.requestId) {
-            this.requestId = opts.requestId;
+        if (opts.ref) {
+            this.ref = `${opts.ref}`;
         }
         if (opts.name) {
             this.name = `${opts.name}`;
@@ -96,7 +96,7 @@ export class Logger implements ILogger {
             ts          : timestamp,
             msg         : message,
             type        : this.levelNames[this.level],
-            ref         : (this.requestId) ? `${this.requestId}` : null,
+            ref         : (this.ref) ? this.ref : null,
             name        : this.name,
             level       : this.level,
             host        : this.hostname,

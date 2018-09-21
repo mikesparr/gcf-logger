@@ -3,7 +3,7 @@ import {ILogger, Logger} from "../index";
 describe("GCF Logger", () => {
     const testName: string = "name";
     const testMessage: string = "something happened";
-    const testRequestId: string = "test-1234567";
+    const testRef: string = "test-1234567";
 
     const log: ILogger = new Logger({name: testName});
 
@@ -141,11 +141,11 @@ describe("GCF Logger", () => {
         });
     }); // trace level
 
-    describe("requestId", () => {
+    describe("ref", () => {
         jest.spyOn(global.console, "log");
 
         beforeAll(() => {
-            log.init({level: 1, requestId: testRequestId});
+            log.init({level: 1, ref: testRef});
         });
 
         beforeEach(() => {
@@ -157,9 +157,9 @@ describe("GCF Logger", () => {
             const resultString = (global.console.log as any).mock.calls[0][0];
             const result = JSON.parse(resultString);
 
-            expect(result.ref).toEqual(testRequestId);
+            expect(result.ref).toEqual(testRef);
 
             done();
         });
-    }); // requestId
+    }); // ref
 });
